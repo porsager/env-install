@@ -1,0 +1,32 @@
+{
+  "name": "env-install",
+  "version": "0.1.0",
+  "description": "Install envDependencies from package.json using environment variable replacements",
+  "bin": {
+    "env-install": "index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/porsager/env-install.git"
+  },
+  "keywords": [
+    "npm",
+    "install",
+    "environment",
+    "variables",
+    "private",
+    "repository",
+    "github",
+    "hosting"
+  ],
+  "author": "Rasmus Porsager <rasmus@porsager.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/porsager/env-install/issues"
+  },
+  "homepage": "https://github.com/porsager/env-install#readme"
+}
