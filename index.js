@@ -14,7 +14,7 @@ Object.keys(deps).map(key => deps[key]).map(insertEnvironmentVariables).forEach(
 
 function insertEnvironmentVariables(pkg) {
   Object.keys(process.env).forEach(key => {
-    pkg = pkg.replace('${' + key + '}', process.env[key])
+    pkg = pkg.replace('${' + key + '}', process.env[key].trim())
   })
 
   return pkg
