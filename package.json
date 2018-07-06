@@ -1,6 +1,6 @@
 {
   "name": "env-install",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Install envDependencies from package.json using environment variable replacements",
   "bin": {
     "env-install": "index.js"
