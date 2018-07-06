@@ -4,7 +4,7 @@ const path = require('path')
     , packageJson = require(path.join(process.cwd(), 'package.json'))
     , childProcess = require('child_process')
 
-const deps = packageJson.envDependencies
+const deps = packageJson.envDependencies || {}
 
 Object.keys(deps).map(key => deps[key]).map(insertEnvironmentVariables).forEach(pkg => {
   try {
