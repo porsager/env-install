@@ -6,16 +6,10 @@ const path = require('path')
 
 const deps = packageJson.envDependencies || {}
 
-Object.keys(deps).map(key => deps[key]).map(insertEnvironmentVariables).forEach(pkg => {
-  try {
-    childProcess.execSync('npm install --no-save ' + pkg, { stdio:[0, 1, 2] })
-  } catch (e) { }
-})
+const packages = Object.keys(deps).map(key =>
+  deps[key].replace(/\${([0-9a-zA-Z_]*)}/g, (_, x) => process.env[x])
+).join(' ')
 
-function insertEnvironmentVariables(pkg) {
-  Object.keys(process.env).forEach(key => {
-    pkg = pkg.replace('${' + key + '}', process.env[key].trim())
-  })
-
-  return pkg
-}
+try {
+  childProcess.execSync('npm install --no-save ' + packages, { stdio:[0, 1, 2] })
+} catch (e) { }
